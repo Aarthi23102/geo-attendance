@@ -21,10 +21,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #cloud_firestore: ^1.0.3
   cupertino_icons: ^0.1.2
   splashscreen: any
   flutter_sparkline: any
-  flutter_staggered_grid_view: any
+  flutter_staggered_grid_view: ^0.4.1
   calendarro: ^1.0.0
   firebase_auth: ^4.1.0
   flutter_screenutil: ^5.6.0
@@ -43,13 +44,15 @@ dependencies:
   firebase_messaging: ^14.0.3
   flutter_local_notifications: ^12.0.3
   easy_geofencing: ^0.2.0
+  firebase_core: ^2.8.0
+  geofencing: ^0.1.0
+  local_auth: ^2.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
 
   assets:
@@ -62,9 +65,8 @@ flutter:
     - assets/back.jpg
     - assets/logo/logo-white.png
     - assets/logo/profile.jpg
-  
-  fonts:
 
+  fonts:
     - family: Poppins-Bold
       fonts:
         - asset: assets/fonts/Poppins-Bold.otf
@@ -81,5 +83,3 @@ flutter:
       fonts:
         - asset: assets/fonts/Bitter-Bold.ttf
         - asset: assets/fonts/Bitter-Regular.ttf
-
-

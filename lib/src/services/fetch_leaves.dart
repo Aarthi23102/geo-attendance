@@ -34,7 +34,7 @@ class LeaveDatabase {
 
   Future<List<Leave>> getLeaveListBasedOnUID(String uid) async {
     DataSnapshot dataSnapshot =
-       ( await _databaseReference.child("leaves").child(uid).once()).snapshot;
+        (await _databaseReference.child("leaves").child(uid).once()).snapshot;
     List<Leave> result = [];
     if (dataSnapshot == null || dataSnapshot.value == null) return result;
 

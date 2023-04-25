@@ -7,15 +7,16 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:name="${applicationName}"
-        android:label="GeoFlix">
+        android:label="GeoApp">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDSp4rP6uKcwvoFH2MjvOjXQ_hfdyVvzxk" />
+            android:value="AIzaSyAmH-ZSZ44qx1bxOon7AGo73s2nS9mYowM" />
         <activity
             android:name="io.flutter.embedding.android.FlutterActivity"
             android:exported="true"

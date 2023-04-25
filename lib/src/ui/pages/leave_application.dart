@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, unused_field, non_constant_identifier_names, import_of_legacy_library_into_null_safe, unnecessary_null_comparison
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
@@ -177,7 +179,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                                 MainAxisAlignment.spaceAround,
                                             children: list,
                                           )),
-                                Text("Your Manager"),
+                                Text("Head of the Department"),
                                 Container(
                                   padding:
                                       const EdgeInsets.fromLTRB(0, 5, 0, 20),
@@ -193,9 +195,10 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                               width: 5.0),
                                         ),
                                       ),
-                                      onTap: () {
-                                        _showDialog(context);
-                                      }),
+                                      // onTap: () {
+                                      //   _showDialog(context);
+                                      // }
+                                      ),
                                 ),
                                 Text("Today's Date"),
                                 Container(
@@ -339,7 +342,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                                 showTitleActions: true,
                                                 minTime: DateTime(date.year,
                                                     date.month, date.day),
-                                                maxTime: DateTime(2022, 12, 31),
+                                                maxTime: DateTime(2033, 12, 31),
                                                 onConfirm: (date) {
                                               print('confirm $date');
                                               _todate = getFormattedDate(date);
@@ -668,7 +671,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                   (states) => Colors.blue,
                 ),
               ),
-              child: new Text("Close"),
+              child: Text("Close"),
               onPressed: () {
                 Navigator.of(context).pop();
               },

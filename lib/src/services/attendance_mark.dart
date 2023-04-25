@@ -126,7 +126,7 @@ void markInAttendance(
           showDialogTemplate(
               context,
               "Attendance Info",
-              "Marked \nStatus: ${geoFenceStatus.toString()}",
+              "Marked",
               "assets/gif/tick.gif",
               Color.fromRGBO(51, 205, 187, 1.0),
               "Great");
@@ -136,7 +136,7 @@ void markInAttendance(
         showDialogTemplate(
             context,
             "Attendance Info",
-            "$errorMessage\nStatus: ${geoFenceStatus.toString()}",
+            "$errorMessage",
             "assets/gif/close.gif",
             Color.fromRGBO(200, 71, 108, 1.0),
             "Oops!");
@@ -181,7 +181,7 @@ void markOutAttendance(
           showDialogTemplate(
               context,
               "Attendance Info",
-              "Marked \nStatus: ${geoFenceStatus.toString()}",
+              "Marked",
               "assets/gif/tick.gif",
               Color.fromRGBO(51, 205, 187, 1.0),
               "Great");
@@ -191,7 +191,7 @@ void markOutAttendance(
         showDialogTemplate(
             context,
             "Attendance Info",
-            "$errorMessage\nStatus: ${geoFenceStatus.toString()}",
+            "$errorMessage",
             "assets/gif/close.gif",
             Color.fromRGBO(200, 71, 108, 1.0),
             "Oops!");

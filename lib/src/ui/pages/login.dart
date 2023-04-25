@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, unnecessary_null_comparison
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -103,6 +105,7 @@ class _LoginState extends State<Login> {
         // checkForSingleSignOn(_user).then((list) {
         //   Navigator.of(context).pop();
         //
+
         //   // Adding UUID to database
         //   if (list[0] == true && list[2] == false) {
         //     _userRef.child(_user.uid).update({"UUID": list[1]});
@@ -229,14 +232,14 @@ class _LoginState extends State<Login> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              Text("GeoFlix",
+                              Text("Geo Check",
                                   style: TextStyle(
                                       fontFamily: "Poppins-Bold",
                                       color: appbarcolor,
                                       fontSize: ScreenUtil().setSp(90),
                                       letterSpacing: .6,
                                       fontWeight: FontWeight.bold)),
-                              Text("Geo-Attendance and HR Management System",
+                              Text("Geo-Attendance Tracking System",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontFamily: "Poppins-Bold",
@@ -331,12 +334,16 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          "Don't have Login Details? ",
+                          "Don't have Login Details?",
                           style: TextStyle(fontFamily: "Poppins-Medium"),
-                        ),
+                        ),],),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
                         InkWell(
                           onTap: () {},
-                          child: Text("Contact Admin",
+                          child: Text("Contact Admin - 1800 949 343",
                               style: TextStyle(
                                   color: splashScreenColorTop,
                                   fontFamily: "Poppins-Bold")),

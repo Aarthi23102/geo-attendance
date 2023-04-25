@@ -1,8 +1,12 @@
+// ignore_for_file: unused_field, unused_element
+
 import 'dart:async';
 
 import 'package:easy_geofencing/enums/geofence_status.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+// import 'package:geolocator/geolocator.dart';
+// import 'package:geofencing/geofencing.dart';
 import 'package:flutter/services.dart';
 import 'package:geo_attendance_system/src/services/attendance_mark.dart';
 import 'package:geo_attendance_system/src/services/fetch_offices.dart';
@@ -12,6 +16,8 @@ import 'package:geo_attendance_system/src/ui/widgets/attendance_Marker_buttons.d
 import 'package:geo_attendance_system/src/ui/widgets/loader_dialog.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+
+import '../../services/auth.dart';
 
 class AttendanceRecorderWidget extends StatefulWidget {
   final User user;
@@ -184,23 +190,52 @@ class AttendanceRecorderWidgetState extends State<AttendanceRecorderWidget> {
     );
   }
 
-  void _callMarkInFunction() {
+  Future<bool> bio() async {
+    // bool isAuthenticated = await AuthService.authenticateUser();
+    return await AuthService.authenticateUser();
+  }
+
+  void _callMarkInFunction() async {
+    bool result = await bio();
     if (geofenceStatus == GeofenceStatus.init) {
-      showDialog(
-          context: context,
-          builder: (_) => Dialog(
-                child: Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey,
+      // bool result = await bio();
+      print("first if");
+      if (result) {
+        print("second if");
+        showDialog(
+            context: context,
+            builder: (_) => Dialog(
+                  child: Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey,
+                    ),
+                    child: Center(
+                        child: Text(
+                      "Login Success",
+                      style: TextStyle(color: Colors.white, fontSize: 22),
+                    )),
                   ),
-                  child: Center(
-                      child: Text(
-                    "Kindly retry after some time!",
-                    style: TextStyle(color: Colors.white, fontSize: 22),
-                  )),
-                ),
-              ));
+                ));
+      } else {
+        print("second if");
+        showDialog(
+            context: context,
+            builder: (_) => Dialog(
+                  child: Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey,
+                    ),
+                    child: Center(
+                        child: Text(
+                      "Face Recog failed",
+                      style: TextStyle(color: Colors.white, fontSize: 22),
+                    )),
+                  ),
+                ));
+        
+      }
     } else {
       onLoadingDialog(context);
       officeDatabase.getOfficeBasedOnUID(widget.user.uid).then((office) {

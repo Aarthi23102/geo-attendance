@@ -33,7 +33,7 @@ class GeoFencingService with ChangeNotifier {
       pointedLatitude: office.latitude.toString(),
       pointedLongitude: office.longitude.toString(),
       radiusMeter: office.radius.toString(),
-      eventPeriodInSeconds: 5,
+      eventPeriodInSeconds: 120,
     );
 
     EasyGeofencing.getGeofenceStream()!.listen((GeofenceStatus status) {
